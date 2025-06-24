@@ -3,14 +3,31 @@ $(window).on("load", function () {
 });
 $(document).ready(function () {
   /************************************ Fixed Header ************************************/
-  // $(this).scrollTop() >= 50
-  //   ? $("header.header-section").addClass("fixed")
-  //   : $("header.header-section").removeClass("fixed ");
-  // $(window).scroll(function () {
-  //   $(this).scrollTop() >= 50
-  //     ? $("header.header-section").addClass("fixed")
-  //     : $("header.header-section").removeClass("fixed ");
+  $(this).scrollTop() >= 50
+    ? $("header.header-section").addClass("fixed")
+    : $("header.header-section").removeClass("fixed ");
+  $(window).scroll(function () {
+    $(this).scrollTop() >= 50
+      ? $("header.header-section").addClass("fixed")
+      : $("header.header-section").removeClass("fixed ");
+  });
+
+  /************************************ Search ************************************/
+  // $(".search-link").click(function () {
+  //   $(".search-form").slideDown(300);
+  //   $(".search-overlay").show();
+  //   $(this).addClass("active");
   // });
+  // $(".search-overlay").click(function () {
+  //   $(".search-form").slideUp(300);
+  //   $(".search-overlay").hide();
+  //   $(".search-link").removeClass("active");
+  // });
+  $(".search-link").click(function () {
+    $(".search-form").slideToggle(300);
+    $(this).toggleClass("active");
+  });
+
   /************************************ Navbar ************************************/
   $(".menu-btn").click(function () {
     if ($(".header-nav").is(":visible")) {
@@ -29,7 +46,15 @@ $(document).ready(function () {
       }, 1);
     }
   });
-  /***** products slider *****/
+  if ($(window).width() <= 991) {
+    $(".has-children>a").click(function (e) {
+      e.stopPropagation();
+      e.preventDefault();
+      $(this).toggleClass("active").next(".children-menu").slideToggle();
+    });
+  }
+
+  /************************************ Products Slider ************************************/
   var products_Swiper = new Swiper(".products-slider .swiper", {
     breakpoints: {
       0: {
@@ -61,7 +86,7 @@ $(document).ready(function () {
     },
   });
 
-  /***** testimonials slider *****/
+  /************************************ Testimonials Slider ************************************/
   var testimonials_Swiper = new Swiper(".testimonials-slider .swiper", {
     breakpoints: {
       0: {
@@ -93,7 +118,7 @@ $(document).ready(function () {
     },
   });
 
-  /***** articles slider *****/
+  /************************************ Articles Slider ************************************/
   var articles_Swiper = new Swiper(".articles-slider .swiper", {
     breakpoints: {
       0: {
