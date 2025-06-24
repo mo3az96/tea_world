@@ -1355,6 +1355,7 @@ body {
     top: calc(100% - 1px);
     inset-inline-end: 0;
     width: 100%;
+    height: auto;
     border-radius: 0;
     background-color: #fff;
   }
@@ -1382,12 +1383,17 @@ body {
 .search-input:focus {
   border-color: #000000;
 }
+@media (max-width: 767px) {
+  .search-input {
+    height: 45px;
+  }
+}
 
 .search-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  inset-inline-end: 19px;
+  inset-inline-end: 25px;
   font-size: 20px;
   color: #000000;
   background-color: transparent;
