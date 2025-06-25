@@ -658,7 +658,7 @@ html[dir=ltr] .form-control {
   .about-statistics {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px 15px;
+    gap: 50px 15px;
   }
 }
 
@@ -862,7 +862,13 @@ html[dir=ltr] .form-control {
 }
 @media (max-width: 991px) {
   .branches-grid {
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 767px) {
+  .branches-grid {
+    gap: 10px;
   }
 }
 
@@ -875,12 +881,14 @@ html[dir=ltr] .form-control {
 @media (max-width: 991px) {
   .branch-item {
     aspect-ratio: 555/294;
-    border-radius: 12.5px;
+    border-radius: 10px;
+    min-width: calc(33.3333333333% - 15px);
+    flex: 1;
   }
 }
 @media (max-width: 767px) {
   .branch-item {
-    aspect-ratio: 262/294;
+    min-width: calc(50% - 15px);
   }
 }
 .branch-item:nth-child(5n+1), .branch-item:nth-child(5n+4), .branch-item:nth-child(5n+5) {
@@ -893,12 +901,6 @@ html[dir=ltr] .form-control {
     aspect-ratio: 555/294;
   }
 }
-@media (max-width: 767px) {
-  .branch-item:nth-child(5n+1), .branch-item:nth-child(5n+4), .branch-item:nth-child(5n+5) {
-    aspect-ratio: 262/294;
-  }
-}
-
 @media (max-width: 991px) {
   .articles-slider {
     max-width: 555px;
@@ -1140,6 +1142,9 @@ html[dir=ltr] .form-control {
   left: 0;
   width: 100%;
   z-index: 999;
+}
+.inner-page .header-section {
+  background-color: #f7f7f7;
 }
 
 .header {
@@ -1835,6 +1840,15 @@ body {
     box-shadow: 0 0 0 0 rgba(77, 194, 71, 0);
   }
 }
+.page-content {
+  padding: 100px 0 130px;
+}
+@media (max-width: 767px) {
+  .page-content {
+    padding: 60px 0 80px;
+  }
+}
+
 .dark-section {
   background-color: #000000;
   color: #fff;
@@ -1896,5 +1910,147 @@ body {
 @media (max-width: 767px) {
   .contact-section {
     padding: 60px 0 35px;
+  }
+}
+
+.about-main {
+  padding-bottom: 120px;
+}
+@media (max-width: 991px) {
+  .about-main {
+    padding-bottom: 70px;
+  }
+}
+
+.about-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 60px;
+}
+
+.about-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+}
+@media (max-width: 1199px) {
+  .about-item {
+    gap: 30px;
+  }
+}
+@media (max-width: 991px) {
+  .about-item {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 555px;
+    text-align: justify;
+    -moz-text-align-last: center;
+         text-align-last: center;
+    margin: 0 auto;
+  }
+}
+.about-item .about-img {
+  width: 50%;
+  max-width: 555px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+@media (max-width: 991px) {
+  .about-item .about-img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.about-item .about-desc {
+  color: #000000;
+}
+.about-item .about-desc :last-child {
+  margin-bottom: 0;
+}
+.about-item .about-desc :empty {
+  display: none;
+}
+.about-item h3 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 27px;
+}
+@media (max-width: 767px) {
+  .about-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+}
+.about-item p {
+  font-size: 24px;
+  line-height: 2;
+  margin: 0 0 0;
+}
+@media (max-width: 767px) {
+  .about-item p {
+    font-size: 18px;
+  }
+}
+.about-item b {
+  font-weight: 600;
+}
+.about-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+@media (max-width: 991px) {
+  .about-item:nth-child(even) {
+    flex-direction: column;
+  }
+}
+
+.statistics-section {
+  overflow: hidden;
+  position: relative;
+  padding: 105px 0;
+}
+@media (max-width: 991px) {
+  .statistics-section {
+    padding: 60px 0;
+  }
+}
+.statistics-section .about-statistics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 1199px) {
+  .statistics-section .about-statistics {
+    display: flex;
+  }
+}
+@media (max-width: 767px) {
+  .statistics-section .about-statistics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.statistics-section .statistic-item {
+  margin: 0 auto;
+}
+.statistics-section .about-pattern {
+  width: 485px;
+  inset-inline-end: -135px;
+}
+@media (max-width: 991px) {
+  .statistics-section .about-pattern {
+    inset-inline: unset;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.1;
   }
 }/*# sourceMappingURL=main.css.map */

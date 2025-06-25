@@ -149,4 +149,33 @@ $(document).ready(function () {
       clickable: true,
     },
   });
+
+  /************************************ Statistics ************************************/
+  if ($(".about-statistics").length) {
+    var a = 0;
+    $(window).scroll(function () {
+      if (
+        a == 0 &&
+        $(this).scrollTop() >= $(".about-statistics").offset().top - 250
+      ) {
+        $(".statistic-item .item-value").each(function () {
+          $(this)
+            .prop("Counter", 0)
+            .animate(
+              {
+                Counter: $(this).data("value"),
+              },
+              {
+                duration: 500,
+                easing: "swing",
+                step: function (now) {
+                  $(this).text("+" + Math.ceil(now));
+                },
+              }
+            );
+        });
+        a++;
+      }
+    });
+  }
 });
