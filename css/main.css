@@ -714,6 +714,9 @@ html[dir=ltr] .form-control {
   width: 100%;
   aspect-ratio: 1;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
 .product-item .item-img img {
   transition: all 0.3s ease-in-out;
@@ -724,10 +727,7 @@ html[dir=ltr] .form-control {
   transform: scale3d(0.75, 0.75, 0.75) rotate(25deg);
 }
 .product-item .item-info {
-  padding: 25px 0 0;
-}
-.swiper-slide .product-item .item-info {
-  padding-bottom: 25px;
+  padding: 25px 0;
 }
 .product-item .item-title {
   font-size: 20px;
@@ -758,6 +758,7 @@ html[dir=ltr] .form-control {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  height: 52px;
   width: 100%;
   max-width: 240px;
   margin: 0 auto 25px;
@@ -2057,5 +2058,69 @@ body {
     align-items: center;
     justify-content: center;
     opacity: 0.1;
+  }
+}
+
+.tabs-responsive {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 10px 25px;
+  margin: 0 0 25px;
+}
+
+.products-nav-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  gap: 10px;
+}
+.products-nav-tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #f7f7f7;
+  border: 1px solid #f7f7f7;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.products-nav-tabs button.active {
+  border-color: #000000;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 30px;
+}
+@media (max-width: 1199px) {
+  .products-grid {
+    gap: 25px 15px;
+  }
+}
+@media (max-width: 991px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 30px;
+  }
+}
+@media (max-width: 767px) {
+  .products-grid {
+    gap: 25px 15px;
+  }
+}
+@media (max-width: 480px) {
+  .products-grid {
+    gap: 30px 10px;
   }
 }/*# sourceMappingURL=main.css.map */

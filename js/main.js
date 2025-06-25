@@ -63,12 +63,12 @@ $(document).ready(function () {
         loop: true,
       },
       480: {
-        slidesPerView: "auto",
+        slidesPerView: 2,
         spaceBetween: 15,
       },
       768: {
         slidesPerView: 2,
-        spaceBetween: 10,
+        spaceBetween: 30,
         loop: false,
       },
       992: {
