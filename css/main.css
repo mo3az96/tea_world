@@ -197,6 +197,18 @@ html[dir=ltr] select {
   content: "\f39e";
 }
 
+.animate-element {
+  transform: translateY(100px) scale(0.8) translateZ(0);
+  opacity: 0;
+  transform-origin: top;
+  transition: all 0.6s ease-in-out 0.4s;
+}
+
+.inView {
+  opacity: 1;
+  transform: translateY(0px) scale(1) translateZ(0);
+}
+
 .primary-btn {
   position: relative;
   display: flex;
@@ -520,7 +532,7 @@ html[dir=ltr] .form-control {
 }
 @media (max-width: 767px) {
   .main-title {
-    font-size: 30px;
+    font-size: 24px;
     margin-bottom: 15px;
   }
 }
@@ -591,7 +603,7 @@ html[dir=ltr] .form-control {
 }
 @media (max-width: 767px) {
   .about_component-title {
-    font-size: 36px;
+    font-size: 30px;
     margin-bottom: 20px;
   }
 }
@@ -609,7 +621,7 @@ html[dir=ltr] .form-control {
 }
 @media (max-width: 767px) {
   .about_component-desc {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 30px;
   }
 }
@@ -689,7 +701,7 @@ html[dir=ltr] .form-control {
   }
 }
 .statistic-item .item-title {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.5;
 }
 @media (max-width: 767px) {
@@ -702,13 +714,14 @@ html[dir=ltr] .form-control {
   width: 100%;
   aspect-ratio: 1;
   display: flex;
-  overflow: hidden;
 }
 .product-item .item-img img {
   transition: all 0.3s ease-in-out;
 }
 .product-item .item-img:hover img {
-  transform: scale(1.025);
+  transform-origin: 10%;
+  -webkit-transform-origin-y: 50%;
+  transform: scale3d(0.75, 0.75, 0.75) rotate(25deg);
 }
 .product-item .item-info {
   padding: 25px 0 0;
@@ -762,7 +775,7 @@ html[dir=ltr] .form-control {
   gap: 12px;
   width: -moz-fit-content;
   width: fit-content;
-  font-size: 18px;
+  font-size: 14px;
   color: #808080;
   margin: 0 auto;
   transition: all 0.3s ease-in-out;
@@ -827,13 +840,13 @@ html[dir=ltr] .form-control {
   color: #d99a44;
 }
 .testimonial-item .item-body {
-  font-size: 18px;
+  font-size: 16px;
   color: #4d4d4d;
-  line-height: 1.444;
+  line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  height: 78px;
+  height: 72px;
   overflow: hidden;
 }
 .dark-section .testimonial-item {
@@ -862,8 +875,7 @@ html[dir=ltr] .form-control {
 }
 @media (max-width: 991px) {
   .branches-grid {
-    display: flex;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
   }
 }
 @media (max-width: 767px) {
@@ -880,27 +892,14 @@ html[dir=ltr] .form-control {
 }
 @media (max-width: 991px) {
   .branch-item {
-    aspect-ratio: 555/294;
-    border-radius: 10px;
-    min-width: calc(33.3333333333% - 15px);
-    flex: 1;
-  }
-}
-@media (max-width: 767px) {
-  .branch-item {
-    min-width: calc(50% - 15px);
+    border-radius: 12.5px;
   }
 }
 .branch-item:nth-child(5n+1), .branch-item:nth-child(5n+4), .branch-item:nth-child(5n+5) {
   grid-column: span 2;
   aspect-ratio: 555/294;
 }
-@media (max-width: 991px) {
-  .branch-item:nth-child(5n+1), .branch-item:nth-child(5n+4), .branch-item:nth-child(5n+5) {
-    grid-column: unset;
-    aspect-ratio: 555/294;
-  }
-}
+
 @media (max-width: 991px) {
   .articles-slider {
     max-width: 555px;
@@ -988,7 +987,7 @@ html[dir=ltr] .form-control {
   gap: 12px;
   width: -moz-fit-content;
   width: fit-content;
-  font-size: 18px;
+  font-size: 14px;
   color: #808080;
   margin: 0;
   transition: all 0.3s ease-in-out;
@@ -1429,7 +1428,7 @@ body {
   gap: 28px;
 }
 .nav-list a {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #000000;
   transition: all 0.3s ease-in-out;
@@ -1484,7 +1483,24 @@ body {
   padding: 16px 0;
   position: relative;
 }
+.has-children > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.has-children > a:after {
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 300;
+  content: "\f107";
+  font-size: 14px;
+  color: #000000;
+  transition: all 0.3s ease-in-out;
+}
 .has-children:hover > a {
+  color: #808080;
+}
+.has-children:hover > a::after {
   color: #808080;
 }
 .has-children:hover .children-menu {
@@ -1574,18 +1590,7 @@ body {
     padding: 0 10px;
   }
   .header-nav .nav-list .has-children > a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-  .header-nav .nav-list .has-children > a:after {
-    font-family: "Font Awesome 6 Pro";
-    font-weight: 300;
-    content: "\f107";
-    font-size: 14px;
-    color: #fff;
-    transition: all 0.3s ease-in-out;
+    gap: 10px;
   }
   .header-nav .nav-list a {
     font-weight: 600;
@@ -1651,7 +1656,7 @@ body {
 
 .header-section.fixed {
   position: fixed;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
 }
 .header-section.fixed .header {
   padding: 15px 0;

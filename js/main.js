@@ -156,7 +156,8 @@ $(document).ready(function () {
     $(window).scroll(function () {
       if (
         a == 0 &&
-        $(this).scrollTop() >= $(".about-statistics").offset().top - 250
+        $(this).scrollTop() + $(window).height() >
+          $(".about-statistics").offset().top
       ) {
         $(".statistic-item .item-value").each(function () {
           $(this)
