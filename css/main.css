@@ -410,11 +410,75 @@ html[dir=ltr] select {
   background-color: #fff;
 }
 
+.form-fieldset {
+  margin-bottom: 40px;
+}
+
+.fieldset-title {
+  background-color: #000000;
+  width: 100%;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  padding: 23px 40px;
+  margin: 0 0 25px;
+}
+@media (max-width: 767px) {
+  .fieldset-title {
+    font-size: 18px;
+    padding: 0 30px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 21px;
+}
+@media (max-width: 991px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.form-grid .full-w {
+  grid-column: 1/-1;
+}
+.form-grid .form-group {
+  margin-bottom: 0;
+}
+
 .form-group {
   margin-bottom: 20px;
 }
 .form-group:last-child {
   margin-bottom: 0;
+}
+
+.form-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  display: block;
+  padding: 0 28px;
+  margin-bottom: 10px;
+}
+.required .form-label::after, .form-group:has([required]) .form-label::after {
+  content: "*";
+  color: #f00;
+}
+.form-label small {
+  font-size: 100%;
+  font-weight: 400;
+}
+@media (max-width: 767px) {
+  .form-label {
+    font-size: 16px;
+    padding: 0 15px;
+  }
 }
 
 .form-control {
@@ -453,6 +517,70 @@ html[dir=ltr] .form-control {
   padding-block: 20px 15px;
 }
 
+.radios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 60px;
+  align-items: center;
+}
+.full-w .radios {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.radio {
+  padding-inline-start: 28px;
+}
+@media (max-width: 767px) {
+  .radio {
+    padding-inline-start: 15px;
+  }
+}
+.radio label {
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+.radio .radio-content {
+  display: flex;
+  align-items: start;
+  gap: 15px;
+}
+.radio .mark {
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.radio .mark::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: #d99a44;
+  border-radius: 50%;
+  transform: scale(0);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+.radio .text {
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.5625rem;
+}
+.radio input {
+  display: none;
+}
+.radio input:checked ~ .radio-content .mark::after {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
 .submit-btn {
   position: relative;
   display: flex;
@@ -485,6 +613,7 @@ html[dir=ltr] .form-control {
 }
 
 .tabs-responsive {
+  width: 100%;
   max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
@@ -493,6 +622,12 @@ html[dir=ltr] .form-control {
   padding: 0 10px 25px;
   margin: 0 0 25px;
 }
+@media (max-width: 767px) {
+  .tabs-responsive {
+    padding: 0 5px 15px;
+    margin: 0 0 15px;
+  }
+}
 
 .custom-nav-tabs {
   display: flex;
@@ -500,6 +635,7 @@ html[dir=ltr] .form-control {
   justify-content: start;
   width: -moz-fit-content;
   width: fit-content;
+  flex-wrap: nowrap;
   margin: 0 auto;
   gap: 10px;
 }
@@ -1890,6 +2026,14 @@ body {
     padding: 60px 0 80px;
   }
 }
+.page-content .section-title {
+  font-size: 36px;
+}
+@media (max-width: 767px) {
+  .page-content .section-title {
+    font-size: 30px;
+  }
+}
 
 .dark-section {
   background-color: #000000;
@@ -2251,8 +2395,144 @@ body {
   }
 }
 .option-item:hover {
-  border-color: #000000;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
 }
 .option-item strong {
   font-weight: 700;
+}
+
+.branches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.branches_list-item {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 20px 40px;
+  border: 2px solid #ededed;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 991px) {
+  .branches_list-item {
+    padding: 15px 20pxfranchise;
+    gap: 20px 15px;
+    border-radius: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .branches_list-item {
+    flex-wrap: wrap;
+  }
+}
+.branches_list-item:hover {
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+}
+.branches_list-item .item-img {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.branches_list-item .item-img img {
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 767px) {
+  .branches_list-item .item-img {
+    width: 60px;
+    height: 60px;
+  }
+}
+.branches_list-item .item-desc {
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000000;
+  width: 100%;
+  margin-inline-end: auto;
+}
+@media (max-width: 767px) {
+  .branches_list-item .item-desc {
+    width: calc(100% - 75px);
+    min-height: 60px;
+  }
+}
+.branches_list-item .item-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+@media (max-width: 767px) {
+  .branches_list-item .item-title {
+    font-size: 16px;
+  }
+}
+.branches_list-item .item-address {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0;
+}
+@media (max-width: 767px) {
+  .branches_list-item .item-address {
+    font-size: 14px;
+  }
+}
+.branches_list-item .item-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 29px;
+  white-space: nowrap;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #000000;
+  margin: 15px 0;
+  transition: all 0.3s ease-in-out;
+}
+.branches_list-item .item-btn:hover {
+  color: #000000;
+  background-color: #808080;
+}
+@media (max-width: 767px) {
+  .branches_list-item .item-btn {
+    width: 100%;
+    margin: 0;
+  }
+}
+.branches_list-item:hover .item-img img {
+  transform: scale(1.1);
+}
+
+.franchise-form {
+  width: 100%;
+  max-width: 945px;
+  margin: 0 auto;
+}
+.franchise-form .form-grid {
+  width: 100%;
+  max-width: 865px;
+  margin: 0 auto;
+}
+.franchise-form .submit-btn {
+  padding: 0 40px;
+  margin: 0 auto;
+}
+@media (max-width: 991px) {
+  .franchise-form {
+    max-width: 550px;
+  }
+  .franchise-form .form-grid {
+    max-width: 470px;
+  }
 }/*# sourceMappingURL=main.css.map */
