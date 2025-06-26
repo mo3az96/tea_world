@@ -555,7 +555,7 @@ html[dir=ltr] .form-control {
   content: "";
   width: 14px;
   height: 14px;
-  background-color: #d99a44;
+  background-color: #ba924a;
   border-radius: 50%;
   transform: scale(0);
   visibility: hidden;
@@ -2724,4 +2724,56 @@ body {
 }
 .share-link:hover {
   color: #000000;
+}
+
+.contact-page .contact-info {
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px 60px;
+  margin-bottom: 70px;
+}
+@media (max-width: 991px) {
+  .contact-page .contact-info {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 767px) {
+  .contact-page .contact-info {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: start;
+    margin-bottom: 40px;
+  }
+}
+.contact-page .contact-item {
+  gap: 18px;
+}
+.contact-page .contact-item i {
+  color: #ba924a;
+}
+.contact-page .contact-item:hover i {
+  color: #000000;
+}
+.contact-page .contact-form {
+  width: 100%;
+  max-width: 555px;
+  margin: 0 auto 80px;
+}
+@media (max-width: 767px) {
+  .contact-page .contact-form {
+    margin-bottom: 40px;
+  }
+}
+.contact-page .submit-btn {
+  margin: 0 auto;
+}
+.contact-page .contact-map {
+  padding: 0;
+  height: 350px;
+}
+@media (max-width: 991px) {
+  .contact-page .contact-map {
+    padding: 0;
+    height: 450px;
+  }
 }/*# sourceMappingURL=main.css.map */
