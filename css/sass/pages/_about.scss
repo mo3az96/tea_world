@@ -1,0 +1,118 @@
+.about-main {
+  padding-bottom: 120px;
+  @include sm {
+    padding-bottom: 70px;
+  }
+}
+
+.about-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 60px;
+}
+
+.about-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  @include md {
+    gap: 30px;
+  }
+  @include sm {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 555px;
+    text-align: justify;
+    text-align-last: center;
+    margin: 0 auto;
+  }
+  .about-img {
+    width: 50%;
+    max-width: 555px;
+    aspect-ratio: 1;
+    overflow: hidden;
+    flex-shrink: 0;
+    @include sm {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .about-desc {
+    color: $textColor;
+    :last-child {
+      margin-bottom: 0;
+    }
+    :empty {
+      display: none;
+    }
+  }
+  h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 27px;
+    @include xs {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  }
+  p {
+    font-size: 24px;
+    line-height: 2;
+    margin: 0 0 0;
+    @include xs {
+      font-size: 18px;
+    }
+  }
+  b {
+    font-weight: 600;
+  }
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    @include sm {
+      flex-direction: column;
+    }
+  }
+}
+
+.statistics-section {
+  overflow: hidden;
+  position: relative;
+  padding: 105px 0;
+  @include sm {
+    padding: 60px 0;
+  }
+  .about-statistics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include md {
+      display: flex;
+    }
+    @include xs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .statistic-item {
+    margin: 0 auto;
+  }
+  .about-pattern {
+    width: 485px;
+    inset-inline-end: -135px;
+    @include sm {
+      inset-inline: unset;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.1;
+    }
+  }
+}

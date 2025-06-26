@@ -1,0 +1,48 @@
+.contact-page {
+  .contact-info {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px 60px;
+    margin-bottom: 70px;
+    @include sm {
+      flex-wrap: wrap;
+    }
+    @include xs {
+      flex-direction: column;
+      gap: 20px;
+      justify-content: start;
+      margin-bottom: 40px;
+    }
+  }
+  .contact-item {
+    gap: 18px;
+    i {
+      color: $oddColor;
+    }
+
+    &:hover {
+      i {
+        color: $primaryColor;
+      }
+    }
+  }
+  .contact-form {
+    width: 100%;
+    max-width: 555px;
+    margin: 0 auto 80px;
+    @include xs {
+      margin-bottom: 40px;
+    }
+  }
+  .submit-btn {
+    margin: 0 auto;
+  }
+  .contact-map {
+    padding: 0;
+    height: 350px;
+    @include sm {
+      padding: 0;
+      height: 450px;
+    }
+  }
+}

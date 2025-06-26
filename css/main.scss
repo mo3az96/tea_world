@@ -1,0 +1,41 @@
+@import "sass/helpers/variables";
+@import "sass/helpers/mixins";
+
+@import "sass/base/typography";
+@import "sass/base/base";
+@import "sass/base/reset";
+
+@import "sass/helpers/animation";
+@import "sass/objects/button";
+@import "sass/objects/titles";
+@import "sass/objects/slider";
+@import "sass/objects/form";
+@import "sass/objects/tabs";
+
+@import "sass/components/main";
+@import "sass/components/about";
+@import "sass/components/statistics";
+@import "sass/components/products";
+@import "sass/components/testimonials";
+@import "sass/components/branches";
+@import "sass/components/articles";
+@import "sass/components/banner";
+@import "sass/components/contact";
+
+@import "sass/layout/header";
+@import "sass/layout/search";
+@import "sass/layout/navbar";
+@import "sass/layout/fixed";
+@import "sass/layout/footer";
+@import "sass/layout/fixed_contacts";
+@import "sass/layout/page_content";
+
+@import "sass/pages/home";
+@import "sass/pages/about";
+@import "sass/pages/products";
+@import "sass/pages/product";
+@import "sass/pages/branches";
+@import "sass/pages/franchise";
+@import "sass/pages/articles";
+@import "sass/pages/article";
+@import "sass/pages/contact";

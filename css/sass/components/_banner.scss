@@ -1,0 +1,54 @@
+.banner-content {
+  padding: 50px 50px 75px;
+  border-radius: 25px;
+  text-align: center;
+  :last-child {
+    margin-bottom: 0;
+  }
+  @include sm {
+    padding: 50px 20px;
+  }
+  @include xs {
+    padding: 30px 20px;
+  }
+}
+
+.banner-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  aspect-ratio: 78/64;
+  margin: 0 auto 25px;
+}
+.banner-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 auto 25px;
+  @include xs {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+}
+.banner-desc {
+  font-size: 24px;
+  line-height: 1.5;
+  margin: 0 auto 40px;
+  @include xs {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+}
+.banner-btn {
+  background-color: #fff;
+  color: $textColor;
+  margin: 0 auto;
+
+  &:focus {
+    color: $textColor;
+  }
+  &:hover {
+    background-color: $secondaryColor;
+    color: #fff;
+  }
+}

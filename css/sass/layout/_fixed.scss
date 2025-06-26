@@ -1,0 +1,24 @@
+.header-section {
+  &.fixed {
+    position: fixed;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+    .header {
+      padding: 15px 0;
+      @include sm {
+        padding: 10px 0;
+      }
+    }
+    .logo {
+      width: 200px;
+      @include md {
+        width: 150px;
+      }
+      @include sm {
+        width: 200px;
+      }
+      @include xs {
+        width: 150px;
+      }
+    }
+  }
+}

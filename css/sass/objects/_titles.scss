@@ -1,0 +1,74 @@
+.section-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  margin: 0 0 45px;
+  &:not(:has(.section-btn)) {
+    text-align: center;
+    justify-content: center;
+  }
+  @include sm {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  :last-child {
+    margin: 0;
+  }
+}
+.titles-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  // max-width: 847px;
+  color: inherit;
+  .section-head:not(:has(.section-btn)) & {
+    align-items: center;
+  }
+  @include sm {
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.333;
+  margin: 0 0 20px;
+  @include xs {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+}
+.section-desc {
+  font-size: 24px;
+  line-height: 1.9;
+  margin: 0 0;
+  @include xs {
+    font-size: 18px;
+  }
+}
+
+.section-btn {
+  flex-shrink: 0;
+  .section-head & {
+    @include sm {
+      display: none;
+    }
+  }
+}
+
+@include lg {
+  .contact-section {
+    &:not(:has(.section-btn)) {
+      text-align: start;
+      justify-content: start;
+      .titles-content {
+        align-items: start;
+        max-width: 100%;
+      }
+    }
+  }
+}

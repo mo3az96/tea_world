@@ -1,0 +1,30 @@
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  @include md {
+    gap: 15px;
+  }
+  @include sm {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include xs {
+    gap: 10px;
+  }
+}
+
+.branch-item {
+  display: flex;
+  border-radius: 25px;
+  overflow: hidden;
+  aspect-ratio: 262/294;
+  @include sm {
+    border-radius: 12.5px;
+  }
+  &:nth-child(5n + 1),
+  &:nth-child(5n + 4),
+  &:nth-child(5n + 5) {
+    grid-column: span 2;
+    aspect-ratio: 555/294;
+  }
+}

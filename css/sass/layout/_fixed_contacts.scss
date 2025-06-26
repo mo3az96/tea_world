@@ -1,0 +1,100 @@
+.fixed-contacts {
+  position: fixed;
+  bottom: 15px;
+  inset-inline-start: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 998;
+  @include xxs {
+    bottom: 10px;
+    inset-inline-start: 10px;
+    gap: 5px;
+  }
+}
+
+.fixed_contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 182px;
+  height: 50px;
+  border-radius: 30px;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background-color: var(--bg1);
+  position: relative;
+  transform: perspective(1px);
+  transition: all 0.3s ease-in-out;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 30px;
+    background-color: var(--bg2);
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    color: #fff;
+    &:after {
+      opacity: 0;
+      visibility: hidden;
+    }
+    animation: none;
+  }
+  i {
+    font-size: 24px;
+  }
+  &.whatsapp {
+    --bg1: #4dc247;
+    --bg2: #4dc247;
+    animation: pulse-green 2s infinite;
+  }
+  &.phone {
+    --bg1: #000;
+    --bg2: #000;
+    animation: pulse 2s infinite;
+  }
+  @include md {
+    width: 50px;
+    span {
+      display: none;
+    }
+  }
+  @include xxs {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(24, 123, 205, 0.91);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(24, 123, 205, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 123, 205, 0);
+  }
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(77, 194, 71, 0.9);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(77, 194, 71, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(77, 194, 71, 0);
+  }
+}

@@ -1,0 +1,45 @@
+@font-face {
+  font-family: "graphik";
+  src: url("../fonts/graphik/GraphikArabic-Light.woff2") format("woff2"),
+    url("../fonts/graphik/GraphikArabic-Light.woff") format("woff"),
+    url("../fonts/graphik/GraphikArabic-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "graphik";
+  src: url("../fonts/graphik/GraphikArabic-Regular.woff2") format("woff2"),
+    url("../fonts/graphik/GraphikArabic-Regular.woff") format("woff"),
+    url("../fonts/graphik/GraphikArabic-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "graphik";
+  src: url("../fonts/graphik/GraphikArabic-Medium.woff2") format("woff2"),
+    url("../fonts/graphik/GraphikArabic-Medium.woff") format("woff"),
+    url("../fonts/graphik/GraphikArabic-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "graphik";
+  src: url("../fonts/graphik/GraphikArabic-Semibold.woff2") format("woff2"),
+    url("../fonts/graphik/GraphikArabic-Semibold.woff") format("woff"),
+    url("../fonts/graphik/GraphikArabic-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "graphik";
+  src: url("../fonts/graphik/GraphikArabic-Bold.woff2") format("woff2"),
+    url("../fonts/graphik/GraphikArabic-Bold.woff") format("woff"),
+    url("../fonts/graphik/GraphikArabic-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

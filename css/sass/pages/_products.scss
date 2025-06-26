@@ -1,0 +1,18 @@
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 30px;
+  @include md {
+    gap: 25px 15px;
+  }
+  @include sm {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 30px;
+  }
+  @include xs {
+    gap: 25px 15px;
+  }
+  @include xxs {
+    gap: 30px 10px;
+  }
+}

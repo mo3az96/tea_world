@@ -1,0 +1,103 @@
+.branches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.branches_list-item {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 20px 40px;
+  border: 2px solid #ededed;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  @include sm {
+    padding: 15px 20pxfranchise;
+    gap: 20px 15px;
+    border-radius: 15px;
+  }
+  @include xs {
+    flex-wrap: wrap;
+  }
+  &:hover {
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  }
+  .item-img {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    flex-shrink: 0;
+    img {
+      transition: all 0.3s ease-in-out;
+    }
+    @include xs {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .item-desc {
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $textColor;
+    width: 100%;
+    margin-inline-end: auto;
+    @include xs {
+      width: calc(100% - 75px);
+      min-height: 60px;
+    }
+  }
+  .item-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    @include xs {
+      font-size: 16px;
+    }
+  }
+  .item-address {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 0;
+    @include xs {
+      font-size: 14px;
+    }
+  }
+  .item-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 0 29px;
+    white-space: nowrap;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: $primaryColor;
+    margin: 15px 0;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: $textColor;
+      background-color: $secondaryColor;
+    }
+    @include xs {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &:hover {
+    .item-img {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

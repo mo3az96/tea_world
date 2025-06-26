@@ -1,0 +1,21 @@
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 30px;
+  @include md {
+    gap: 25px 15px;
+  }
+  @include sm {
+    grid-template-columns: 1fr;
+    gap: 50px 30px;
+    width: 100%;
+    max-width: 555px;
+    margin: 0 auto;
+  }
+  @include xs {
+    gap: 25px 15px;
+  }
+  @include xxs {
+    gap: 30px 10px;
+  }
+}

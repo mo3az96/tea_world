@@ -1,0 +1,96 @@
+/* General Resets */
+* {
+  outline: 0 !important;
+}
+input::placeholder {
+  color: inherit;
+}
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  border: none;
+  background: none;
+  outline: 0;
+}
+a,
+img,
+button,
+input,
+select {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+[role="button"] {
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  -moz-appearance: textfield;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  &::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
+select {
+  background-image: url(../images/arrow.png);
+  background-repeat: no-repeat;
+  background-size: 8px;
+  appearance: none;
+  background-position: left 25px top 50%;
+  @include ltr {
+    background-position: right 25px top 50%;
+  }
+  @include xs {
+    background-position: left 10px top 50%;
+    @include ltr {
+      background-position: right 10px top 50%;
+    }
+  }
+}
+.fa-linkedin {
+  &::before {
+    content: "\f0e1";
+  }
+}
+
+.fa-twitter {
+  &::before {
+    content: "\e61b";
+  }
+}
+
+

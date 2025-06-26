@@ -1,0 +1,92 @@
+.search-link {
+  width: 20px;
+  &.active {
+    i {
+      &::before {
+        content: "\f00d";
+      }
+    }
+  }
+}
+
+.search-content {
+  position: relative;
+  z-index: 9;
+
+  @include xs {
+    position: static;
+  }
+}
+
+.search-form {
+  position: absolute;
+  top: calc(100% + 20px);
+  inset-inline-end: -50px;
+  height: 45px;
+  border-radius: 22.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  width: 355px;
+  display: none;
+  z-index: 10;
+
+  @include xs {
+    padding: 7px 15px;
+    top: calc(100% - 1px);
+    inset-inline-end: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    background-color: #fff;
+  }
+}
+
+.search-input {
+  border: 2px solid transparent;
+  height: 100%;
+  width: 100%;
+  border-radius: 22.5px;
+  padding: 0 24px;
+  color: $textColor;
+  font-size: 14px;
+  text-align: right;
+  background-color: #f7f7f7;
+  border: 2px solid #f7f7f7;
+  transition: all 0.3s ease-in-out;
+
+  &::placeholder {
+    color: #a1a1a1;
+  }
+
+  &:focus {
+    border-color: $primaryColor;
+  }
+
+  @include xs{
+    height: 45px;
+  }
+}
+
+.search-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  inset-inline-end: 25px;
+  font-size: 20px;
+  color: $primaryColor;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-overlay {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
