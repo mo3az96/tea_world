@@ -463,8 +463,7 @@ html[dir=ltr] select {
   font-weight: 600;
   color: #000000;
   display: block;
-  padding: 0 28px;
-  margin-bottom: 10px;
+  padding-inline-start: 28px;
 }
 .required .form-label::after, .form-group:has([required]) .form-label::after {
   content: "*";
@@ -477,7 +476,7 @@ html[dir=ltr] select {
 @media (max-width: 767px) {
   .form-label {
     font-size: 16px;
-    padding: 0 15px;
+    padding-inline-start: 15px;
   }
 }
 
@@ -1100,10 +1099,7 @@ html[dir=ltr] .form-control {
   transform: scale(1.025);
 }
 .article-item .item-info {
-  padding: 35px 0 0;
-}
-.swiper-slide .article-item .item-info {
-  padding-bottom: 25px;
+  padding: 35px 0 25px;
 }
 @media (max-width: 767px) {
   .article-item .item-info {
@@ -1137,6 +1133,9 @@ html[dir=ltr] .form-control {
     line-height: 1.45;
     height: 58px;
   }
+  .grid-item .article-item .item-title {
+    height: auto;
+  }
 }
 .article-item .item-desc {
   font-size: 18px;
@@ -1150,7 +1149,11 @@ html[dir=ltr] .form-control {
 @media (max-width: 767px) {
   .article-item .item-desc {
     -webkit-line-clamp: 2;
+    height: 52px;
     margin-bottom: 20px;
+  }
+  .grid-item .article-item .item-desc {
+    height: auto;
   }
 }
 .article-item .item-link {
@@ -1769,6 +1772,9 @@ body {
     font-weight: 600;
     font-size: 20px;
     width: 100%;
+    color: #fff;
+  }
+  .header-nav .nav-list a::after {
     color: #fff;
   }
   .header-nav .nav-list a:hover {
@@ -2534,5 +2540,35 @@ body {
   }
   .franchise-form .form-grid {
     max-width: 470px;
+  }
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 30px;
+}
+@media (max-width: 1199px) {
+  .articles-grid {
+    gap: 25px 15px;
+  }
+}
+@media (max-width: 991px) {
+  .articles-grid {
+    grid-template-columns: 1fr;
+    gap: 50px 30px;
+    width: 100%;
+    max-width: 555px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 767px) {
+  .articles-grid {
+    gap: 25px 15px;
+  }
+}
+@media (max-width: 480px) {
+  .articles-grid {
+    gap: 30px 10px;
   }
 }/*# sourceMappingURL=main.css.map */
